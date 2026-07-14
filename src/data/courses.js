@@ -1,0 +1,182 @@
+// UG Courses grouped by school
+export const ugCourses = {
+  "Computer Science & IT": [
+    {
+      id: "bsc-cs",
+      name: "B.Sc Computer Science",
+      shortName: "B.Sc CS",
+      duration: "3 Years",
+      description: "Core computing fundamentals — algorithms, data structures, OS, DBMS — with hands-on lab work and project-based learning.",
+      seats: 60,
+    },
+    {
+      id: "bsc-it",
+      name: "B.Sc Information Technology",
+      shortName: "B.Sc IT",
+      duration: "3 Years",
+      description: "Software development lifecycle, networking, web technologies, and enterprise IT systems with industry-aligned curriculum.",
+      seats: 60,
+    },
+    {
+      id: "bsc-aids",
+      name: "B.Sc Artificial Intelligence & Data Science",
+      shortName: "B.Sc AI&DS",
+      duration: "3 Years",
+      description: "Machine learning, deep learning, Python, data analytics, and real-world AI applications using industry tools.",
+      seats: 60,
+    },
+    {
+      id: "bsc-cyber",
+      name: "B.Sc Cyber Security",
+      shortName: "B.Sc Cyber Security",
+      duration: "3 Years",
+      description: "Ethical hacking, network security, cryptography, and digital forensics — preparing the next generation of security professionals.",
+      seats: 60,
+    },
+    {
+      id: "bca",
+      name: "Bachelor of Computer Applications",
+      shortName: "BCA",
+      duration: "3 Years",
+      description: "Comprehensive computing education covering programming languages, software engineering, database management, and web development.",
+      seats: 60,
+    },
+  ],
+  "Commerce & Management": [
+    {
+      id: "bcom",
+      name: "B.Com",
+      shortName: "B.Com",
+      duration: "3 Years",
+      description: "Foundational commerce education covering accounting, taxation, finance, and business law with practical exposure.",
+      seats: 60,
+    },
+    {
+      id: "bcom-ca",
+      name: "B.Com Computer Applications",
+      shortName: "B.Com CA",
+      duration: "3 Years",
+      description: "Commerce principles integrated with computer applications — accounting software, spreadsheets, and business analytics.",
+      seats: 60,
+    },
+    {
+      id: "bcom-pa",
+      name: "B.Com Professional Accounting",
+      shortName: "B.Com PA",
+      duration: "3 Years",
+      description: "Industry-standard accounting practices, cost accounting, auditing, and tax planning for aspiring finance professionals.",
+      seats: 60,
+    },
+    {
+      id: "bcom-af",
+      name: "B.Com Accounting & Finance",
+      shortName: "B.Com A&F",
+      duration: "3 Years",
+      description: "In-depth study of financial accounting, corporate finance, investment analysis, and financial markets.",
+      seats: 60,
+    },
+    {
+      id: "bba",
+      name: "Bachelor of Business Administration",
+      shortName: "BBA",
+      duration: "3 Years",
+      description: "Management fundamentals — marketing, HR, operations, entrepreneurship — designed for future business leaders.",
+      seats: 60,
+    },
+  ],
+  "Arts & Design": [
+    {
+      id: "bsc-viscom",
+      name: "B.Sc Visual Communication",
+      shortName: "B.Sc Viscom",
+      duration: "3 Years",
+      description: "Photography, videography, graphic design, advertising, and media production for creative industry careers.",
+      seats: 60,
+    },
+    {
+      id: "bsc-cdf",
+      name: "B.Sc Costume Design & Fashion",
+      shortName: "B.Sc CDF",
+      duration: "3 Years",
+      description: "Fashion design, textile science, garment construction, and retail management for the fashion industry.",
+      seats: 60,
+    },
+    {
+      id: "ba-english",
+      name: "BA English Literature",
+      shortName: "BA English Literature",
+      duration: "3 Years",
+      description: "Classic and contemporary literary studies, creative writing, linguistics, and communication skills.",
+      seats: 60,
+    },
+  ],
+};
+
+// PG Courses
+export const pgCourses = [
+  {
+    id: "msc-cs",
+    name: "M.Sc Computer Science",
+    shortName: "M.Sc CS",
+    duration: "2 Years",
+    description: "Advanced algorithms, research methodologies, cloud computing, and specialization tracks in AI/ML and systems.",
+    seats: 30,
+  },
+  {
+    id: "mcom-ca",
+    name: "M.Com Computer Applications",
+    shortName: "M.Com CA",
+    duration: "2 Years",
+    description: "Advanced commerce with integrated computer applications, research methods, and data-driven financial analysis.",
+    seats: 30,
+  },
+  {
+    id: "ma-english",
+    name: "MA English Literature",
+    shortName: "MA English Literature",
+    duration: "2 Years",
+    description: "Postgraduate literary theory, critical analysis, research writing, and specialized genre studies.",
+    seats: 30,
+  },
+  {
+    id: "mca",
+    name: "Master of Computer Applications",
+    shortName: "MCA",
+    duration: "2 Years",
+    description: "Advanced software engineering, enterprise application development, and emerging technology domains.",
+    seats: 30,
+  },
+  {
+    id: "msc-viscom",
+    name: "M.Sc Visual Communication",
+    shortName: "M.Sc Viscom",
+    duration: "2 Years",
+    description: "Advanced media production, digital storytelling, and research in visual communication practices.",
+    seats: 30,
+  },
+];
+
+// Doctoral Courses
+export const doctoralCourses = [
+  {
+    id: "phd-cs",
+    name: "Ph.D Computer Science",
+    shortName: "PhD CS",
+    duration: "3–5 Years",
+    description: "Doctoral research in cutting-edge CS domains — AI, systems, security, and human-computer interaction.",
+  },
+  {
+    id: "phd-commerce",
+    name: "Ph.D Commerce",
+    shortName: "PhD Commerce",
+    duration: "3–5 Years",
+    description: "Advanced research in commerce, business economics, financial markets, and organizational behavior.",
+  },
+  {
+    id: "phd-management",
+    name: "Ph.D Management",
+    shortName: "PhD Management",
+    duration: "3–5 Years",
+    description: "Research-oriented doctoral program in strategic management, leadership, and organizational studies.",
+  },
+];
