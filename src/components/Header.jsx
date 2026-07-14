@@ -99,23 +99,23 @@ export default function Header() {
               </div>
             </Link>
 
-            {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center gap-1.5">
+            <nav className="hidden lg:flex items-center gap-1">
               {navLinks.map((link) => (
                 <NavLink
                   key={link.to}
                   to={link.to}
                   end={link.to === '/'}
                   style={({ isActive }) => ({
-                    padding: '6px 12px',
+                    padding: '6px 8px',
                     fontFamily: "var(--font-sans)",
                     fontWeight: isActive ? 600 : 500,
-                    fontSize: 13.5,
+                    fontSize: 13,
                     color: isActive ? '#0067B8' : '#1B1B1B',
                     textDecoration: 'none',
                     borderBottom: '2px solid',
                     borderBottomColor: isActive ? '#0067B8' : 'transparent',
                     transition: 'all 0.15s ease',
+                    whiteSpace: 'nowrap',
                   })}
                   className="hover:text-[#0067B8] dark:hover:text-white"
                 >
@@ -203,6 +203,7 @@ export default function Header() {
                   fontWeight: 500,
                   color: '#1B1B1B',
                   textDecoration: 'none',
+                  whiteSpace: 'nowrap',
                 }}
                 className="hover:underline"
               >
