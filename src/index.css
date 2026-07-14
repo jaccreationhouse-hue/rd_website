@@ -333,3 +333,31 @@ h1, h2, h3, h4, h5, h6 {
   transform: scaleX(1) !important;
   background-color: #0067B8 !important;
 }
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Leadership Card Hover Effects */
+.leadership-card {
+  transition: transform 0.25s cubic-bezier(0.1, 0.9, 0.2, 1), box-shadow 0.25s cubic-bezier(0.1, 0.9, 0.2, 1), border-color 0.25s ease !important;
+}
+
+.leadership-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06) !important;
+  border-color: #0067B8 !important;
+}
+
+.leadership-card img {
+  transition: transform 0.35s cubic-bezier(0.1, 0.9, 0.2, 1) !important;
+}
+
+.leadership-card:hover img {
+  transform: scale(1.04);
+}

@@ -399,7 +399,7 @@ export default function About() {
                             boxShadow: '0 2px 8px rgba(0,0,0,0.01)',
                             position: 'relative',
                           }}
-                          className={`hover:border-[#0067B8] hover:shadow-md transition-all duration-200 ${
+                          className={`hover:border-[#0067B8] hover:shadow-md hover:-translate-y-1 hover:scale-[1.02] transition-all duration-200 ${
                             isEven ? 'md:mr-10' : 'md:ml-10'
                           }`}
                         >
@@ -609,7 +609,7 @@ export default function About() {
                     height: '100%',
                     display: 'flex',
                     flexDirection: 'column',
-                  }}>
+                  }} className="leadership-card">
                     {/* Photo panel */}
                     <div style={{
                       height: 280,
