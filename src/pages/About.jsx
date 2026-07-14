@@ -53,7 +53,6 @@ const coreValues = [
 
 export default function About() {
   const [activeTab, setActiveTab] = useState('vision');
-  const [timelineIndex, setTimelineIndex] = useState(0);
 
   return (
     <>
@@ -315,9 +314,9 @@ export default function About() {
           </div>
         </section>
 
-        {/* ── INTERACTIVE LEGACY TIMELINE ── */}
+        {/* ── VERTICAL LEGACY TIMELINE ── */}
         <section style={{ padding: '80px 0 0' }}>
-          <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 32px' }}>
+          <div style={{ maxWidth: 1000, margin: '0 auto', padding: '0 32px' }}>
             <ScrollReveal>
               <div style={{ marginBottom: 48, textAlign: 'center' }}>
                 <span className="section-eyebrow">Our Legacy</span>
@@ -334,107 +333,114 @@ export default function About() {
               </div>
             </ScrollReveal>
 
-            {/* Horizontal Timeline Bar */}
-            <ScrollReveal>
+            {/* Vertical Timeline Path */}
+            <div style={{ position: 'relative', marginTop: 64, paddingBottom: 24 }} className="timeline-container">
+              {/* Vertical Center Line */}
               <div style={{
-                position: 'relative',
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                maxWidth: 800,
-                margin: '0 auto 40px',
-                padding: '0 20px',
-              }}>
-                {/* Horizontal line connector */}
-                <div style={{
-                  position: 'absolute',
-                  left: 40,
-                  right: 40,
-                  top: '50%',
-                  transform: 'translateY(-50%)',
-                  height: 2,
-                  backgroundColor: BORDER,
-                  zIndex: 0,
-                }} />
+                position: 'absolute',
+                top: 0,
+                bottom: 0,
+                width: 2,
+                backgroundColor: BORDER,
+              }} className="left-6 md:left-1/2 transform md:-translate-x-1/2" />
 
-                {timelineMilestones.map((milestone, idx) => {
-                  const isActive = timelineIndex === idx;
-                  return (
-                    <button
-                      key={milestone.year}
-                      onClick={() => setTimelineIndex(idx)}
+              {timelineMilestones.map((milestone, idx) => {
+                const isEven = idx % 2 === 0;
+                return (
+                  <ScrollReveal key={milestone.year} delay={idx * 0.05}>
+                    <div 
                       style={{
-                        position: 'relative',
-                        zIndex: 1,
-                        width: 48,
-                        height: 48,
-                        borderRadius: '50%',
-                        backgroundColor: isActive ? BLUE : WHITE,
-                        color: isActive ? WHITE : DARK,
-                        border: `2px solid ${isActive ? BLUE : BORDER}`,
-                        cursor: 'pointer',
                         display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontFamily: 'var(--font-heading)',
-                        fontWeight: 700,
-                        fontSize: 13,
-                        boxShadow: '0 4px 10px rgba(0,0,0,0.03)',
-                        transition: 'all 0.2s ease',
+                        position: 'relative',
+                        marginBottom: 48,
                       }}
-                      className="hover:scale-110 hover:border-[#0067B8] transition-all"
+                      className={`flex-col md:flex-row items-start md:items-center ${
+                        isEven ? 'md:flex-row-reverse' : ''
+                      }`}
                     >
-                      {milestone.year}
-                    </button>
-                  );
-                })}
-              </div>
-            </ScrollReveal>
+                      {/* Left/Right Spacing Column (Desktop only) */}
+                      <div className="hidden md:block md:w-1/2" />
 
-            {/* Selected Milestone content card */}
-            <ScrollReveal>
-              <div style={{
-                maxWidth: 700,
-                margin: '0 auto',
-                backgroundColor: WHITE,
-                border: `1px solid ${BORDER}`,
-                borderRadius: 6,
-                padding: 40,
-                textAlign: 'center',
-                boxShadow: '0 4px 16px rgba(0,0,0,0.02)',
-              }} className="fluent-fade-in">
-                <span style={{
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: 11,
-                  fontWeight: 600,
-                  color: BLUE,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.06em',
-                }}>
-                  Milestone Achievement — {timelineMilestones[timelineIndex].year}
-                </span>
-                <h3 style={{
-                  fontFamily: 'var(--font-heading)',
-                  fontWeight: 800,
-                  fontSize: 22,
-                  color: DARK,
-                  marginTop: 12,
-                  marginBottom: 12,
-                }}>
-                  {timelineMilestones[timelineIndex].title}
-                </h3>
-                <p style={{
-                  fontFamily: 'var(--font-sans)',
-                  fontSize: 14.5,
-                  color: MUTED,
-                  lineHeight: 1.65,
-                  maxWidth: 520,
-                  margin: '0 auto',
-                }}>
-                  {timelineMilestones[timelineIndex].desc}
-                </p>
-              </div>
-            </ScrollReveal>
+                      {/* Dot Node Indicator */}
+                      <div 
+                        style={{
+                          position: 'absolute',
+                          zIndex: 2,
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          top: '24px',
+                        }} 
+                        className="left-6 md:left-1/2 transform -translate-x-1/2 md:-translate-y-1/2"
+                      >
+                        <div style={{
+                          width: 14,
+                          height: 14,
+                          borderRadius: '50%',
+                          backgroundColor: WHITE,
+                          border: `3px solid ${BLUE}`,
+                          boxShadow: '0 0 0 4px rgba(0, 103, 184, 0.12)',
+                        }} />
+                      </div>
+
+                      {/* Milestone Card Column */}
+                      <div 
+                        style={{
+                          width: '100%',
+                        }} 
+                        className="pl-14 md:pl-0 md:w-1/2"
+                      >
+                        <div 
+                          style={{
+                            backgroundColor: WHITE,
+                            border: `1px solid ${BORDER}`,
+                            borderRadius: 4,
+                            padding: 28,
+                            boxShadow: '0 2px 8px rgba(0,0,0,0.01)',
+                            position: 'relative',
+                          }}
+                          className={`hover:border-[#0067B8] hover:shadow-md transition-all duration-200 ${
+                            isEven ? 'md:mr-10' : 'md:ml-10'
+                          }`}
+                        >
+                          <span style={{
+                            fontFamily: 'var(--font-mono)',
+                            fontSize: 12,
+                            fontWeight: 700,
+                            color: BLUE,
+                            backgroundColor: '#F3F8FC',
+                            padding: '4px 10px',
+                            borderRadius: 2,
+                            display: 'inline-block',
+                            marginBottom: 12,
+                          }}>
+                            {milestone.year}
+                          </span>
+                          <h3 style={{
+                            fontFamily: 'var(--font-heading)',
+                            fontWeight: 700,
+                            fontSize: 18,
+                            color: DARK,
+                            marginBottom: 8,
+                          }}>
+                            {milestone.title}
+                          </h3>
+                          <p style={{
+                            fontFamily: 'var(--font-sans)',
+                            fontSize: 13.5,
+                            color: MUTED,
+                            lineHeight: 1.6,
+                          }}>
+                            {milestone.desc}
+                          </p>
+                        </div>
+                      </div>
+
+                    </div>
+                  </ScrollReveal>
+                );
+              })}
+            </div>
           </div>
         </section>
 
