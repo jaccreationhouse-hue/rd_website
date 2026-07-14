@@ -67,7 +67,9 @@ export default function Header() {
                 alignItems: 'center',
                 gap: 12,
                 textDecoration: 'none',
+                transition: 'opacity 0.15s ease',
               }}
+              className="hover:opacity-80"
             >
               <img
                 src="/images/logo/rd.png"
@@ -112,12 +114,11 @@ export default function Header() {
                     fontSize: 13,
                     color: isActive ? '#0067B8' : '#1B1B1B',
                     textDecoration: 'none',
-                    borderBottom: '2px solid',
-                    borderBottomColor: isActive ? '#0067B8' : 'transparent',
-                    transition: 'all 0.15s ease',
                     whiteSpace: 'nowrap',
                   })}
-                  className="hover:text-[#0067B8] dark:hover:text-white"
+                  className={({ isActive }) =>
+                    `fluent-nav-link ${isActive ? 'fluent-nav-link-active' : ''}`
+                  }
                 >
                   {link.label}
                 </NavLink>
@@ -204,8 +205,9 @@ export default function Header() {
                   color: '#1B1B1B',
                   textDecoration: 'none',
                   whiteSpace: 'nowrap',
+                  transition: 'color 0.15s ease',
                 }}
-                className="hover:underline"
+                className="hover:text-[#0067B8]"
               >
                 <User size={14} />
                 Student Portal

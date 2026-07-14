@@ -304,3 +304,32 @@ h1, h2, h3, h4, h5, h6 {
 .fluent-fade-in {
   animation: fluentFadeIn 0.35s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
 }
+
+/* Premium Nav Link hover underline effect */
+.fluent-nav-link {
+  position: relative;
+  transition: color 0.15s ease !important;
+}
+
+.fluent-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 8px;
+  right: 8px;
+  height: 2px;
+  background-color: #0067B8;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.2s cubic-bezier(0.1, 0.9, 0.2, 1);
+}
+
+.fluent-nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.fluent-nav-link-active::after {
+  transform: scaleX(1) !important;
+  background-color: #0067B8 !important;
+}

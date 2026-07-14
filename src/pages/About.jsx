@@ -382,6 +382,7 @@ export default function About() {
                         boxShadow: '0 4px 10px rgba(0,0,0,0.03)',
                         transition: 'all 0.2s ease',
                       }}
+                      className="hover:scale-110 hover:border-[#0067B8] transition-all"
                     >
                       {milestone.year}
                     </button>
@@ -460,7 +461,7 @@ export default function About() {
             <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
               
               {/* Card 1: NAAC (Large grid-col-span-7) */}
-              <div className="md:col-span-7" style={{
+              <div className="md:col-span-7 hover:border-[#0067B8] hover:-translate-y-1 hover:shadow-md transition-all duration-200 cursor-default" style={{
                 backgroundColor: WHITE,
                 border: `1px solid ${BORDER}`,
                 borderRadius: 4,
@@ -487,7 +488,7 @@ export default function About() {
               </div>
 
               {/* Card 2: Apple Developer Program (grid-col-span-5) */}
-              <div className="md:col-span-5" style={{
+              <div className="md:col-span-5 hover:border-[#D83B01] hover:-translate-y-1 hover:shadow-md transition-all duration-200 cursor-default" style={{
                 backgroundColor: WHITE,
                 border: `1px solid ${BORDER}`,
                 borderRadius: 4,
@@ -514,7 +515,7 @@ export default function About() {
               </div>
 
               {/* Card 3: Microsoft Cloud Curriculum (grid-col-span-5) */}
-              <div className="md:col-span-5" style={{
+              <div className="md:col-span-5 hover:border-[#107C10] hover:-translate-y-1 hover:shadow-md transition-all duration-200 cursor-default" style={{
                 backgroundColor: WHITE,
                 border: `1px solid ${BORDER}`,
                 borderRadius: 4,
@@ -541,7 +542,7 @@ export default function About() {
               </div>
 
               {/* Card 4: UGC / AICTE approvals (grid-col-span-7) */}
-              <div className="md:col-span-7" style={{
+              <div className="md:col-span-7 hover:border-[#8660A9] hover:-translate-y-1 hover:shadow-md transition-all duration-200 cursor-default" style={{
                 backgroundColor: WHITE,
                 border: `1px solid ${BORDER}`,
                 borderRadius: 4,
